@@ -25,7 +25,7 @@ const compiler = webpack({
         exclude: /(node_modules|bower_components)/,
         loaders:[
           "react-hot",
-          'babel?presets[]=react,presets[]=es2015,presets[]=stage-2'
+          'babel?presets[]=react,presets[]=es2015,presets[]=stage-2,plugins[]=transform-runtime'
         ]
       }
     ]

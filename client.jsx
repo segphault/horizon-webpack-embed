@@ -7,7 +7,7 @@ const horizon = Horizon();
 const collection = horizon("test");
 
 (async () => {
-    await collection.store([{item: 1}, {item: 2}, {item: 3}]).toPromise();
-    let items = await collection.order("item").fetch().toArray().toPromise();
+    await collection.store([{item: 1}, {item: 2}, {item: 3}]).subscribe();
+    let items = await collection.order("item").fetch().toArray().subscribe();
     ReactDOM.render(<App items={items} />, document.getElementById("app"));
 })();
