@@ -6,8 +6,11 @@ const server = require("http").createServer(app.callback());
 require("./webpack")(app);
 require("@horizon/server")(server, {
   rdb_host: "rethinkdb-stable",
-  auto_create_table: true,
-  auto_create_index: true
+  auto_create_collection: true,
+  auto_create_index: true,
+  auth: {
+    token_secret: 'insertYourSuperSecretTokenMcSecretHere'
+  }
 });
 
 app.use(require("koa-static")(`${__dirname}/public`));
